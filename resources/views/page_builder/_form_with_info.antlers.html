@@ -1,0 +1,175 @@
+{{# @name Form @desc The form page builder block. @set page.page_builder.form
+#}}
+
+<!-- /page_builder/_form.antlers.html -->
+{{ partial:page_builder/block }}
+<div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
+    <div class="col-span-6">
+        <div class="flex flex-col justify-between items-start">
+            <div class="">
+                {{ partial:typography/prose as="article" class="contents
+                leading-normal" }} {{ article }} {{ partial
+                src="components/{type}" }} {{ /article }} {{
+                /partial:typography/prose }}
+            </div>
+            <div class="col-span-3 space-y-5 mt-8">
+                <div class="flex flex-col">
+                    <p class="">Termoelement OÜ</p>
+                    <p class="text-xs opacity-50">Reg.nr. 16321870</p>
+                </div>
+                <div class="flex flex-col">
+                    <a class="flex" href="tel:+3725074984">
+                        {{ heroicon:outline:device-phone-mobile class="h-4 w-4
+                        mr-4" }}+372 50 74 984</a
+                    >
+                    <p class="text-xs opacity-50">Helista meile</p>
+                </div>
+                <div class="flex flex-col">
+                    <a class="flex" href="mailto:info@termoelement.ee"
+                        >{{ heroicon:outline:academic-cap class="h-4 w-4 mr-4"
+                        }}info@termoelement.ee</a
+                    >
+                    <p class="text-xs opacity-50">Kirjuta meile</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-6">
+        {{ block:title ?= { partial:typography/h1 as="h2" class="mb-8"
+        :content="block:title" } }} {{ block:text ?= { partial:typography/p
+        :content="block:text" } }} {{# Render form and use Alpine based Statamic
+        conditional logic. #}} {{ if form:handle }} {{ form:create
+        :in="form:handle" js="alpine:form" attr:x-ref="form" }} {{# Use Laravel
+        Precognition for live validation and submission. #}}
+        <div x-data="formHandler()" x-cloak>
+            {{# Error notifications. #}}
+            <template x-if="form.hasErrors && submitted">
+                <div
+                    id="summary"
+                    role="group"
+                    class="rounded border p-4 bg-red-50 border-red-700"
+                >
+                    <h3 class="mb-2 leading- font-bold text-red-700">
+                        {{ trans:strings.form_error }}
+                    </h3>
+                    <ul class="list-disc list-inside marker:text-red-700">
+                        <template x-for="(error, index) in form.errors">
+                            <li>
+                                <a
+                                    :href="`#${index}`"
+                                    @click.prevent="$focus.focus(document.querySelector(`#${index}`))"
+                                    x-text="error"
+                                    class="p-1 -m-1 rounded focus:outline-none focus-visible:ring-2 ring-red-700 text-red-700 underline"
+                                ></a>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+
+            {{# Success notifications. #}}
+            <template x-if="success">
+                {{ partial:components/notification type="success"
+                class="md:col-span-12" content="{trans:strings.form_success}" }}
+            </template>
+
+            {{# Honeypot spam protection. #}}
+            <div class="hidden">
+                <label class="font-bold" for="{{ honeypot }}"
+                    >{{ trans:strings.form_honeypot }}
+                    <sup class="text-red-700">*</sup></label
+                >
+                <input
+                    class="form-input w-full"
+                    id="{{ honeypot }}"
+                    type="text"
+                    name="{{ honeypot }}"
+                    x-model="form.{{ honeypot }}"
+                    tabindex="-1"
+                    autocomplete="off"
+                />
+            </div>
+
+            {{# Render various form sections. #}} {{ sections }}
+            <fieldset class="w-full grid md:grid-cols-2 gap-6">
+                {{ if display || instructions }}
+                <span class="md:col-span-2">
+                    {{ display ?= { partial:typography/h2 class="mb-2"
+                    as="legend" content="{ trans :key="display" }" } }} {{
+                    instructions ?= { partial:typography/p content="{ trans
+                    :key="instructions" }" } }}
+                </span>
+                {{ /if }} {{# Render the default-styled fields. #}} {{ fields
+                scope="field" }}
+                <template x-if="{{ show_field }}">
+                    <!-- TO-DO siit saad muuta formi välimust -->
+                    <div
+                        class="
+                                            flex flex-col
+                                            {{ input_type == 'hidden' ?= 'hidden' }}
+                                            {{ switch(
+                                                (width == '25') => 'md:col-span-3',
+                                                (width == '33') => 'md:col-span-4',
+                                                (width == '50') => 'md:col-span-6',
+                                                (width == '66') => 'md:col-span-8',
+                                                (width == '75') => 'md:col-span-9',
+                                                () => 'md:col-span-6'
+                                            )}}
+                                        "
+                    >
+                        {{ unless type == 'spacer' }}
+                        <label class="font-light" for="{{ handle }}">
+                            {{ trans :key="field:display" }} {{ if validate |
+                            contains('required') }}
+                            <sup class="text-red-700">*</sup>
+                            {{ /if }} {{ if field:instructions &&
+                            instructions_position === 'above' }} {{
+                            partial:typography/p class="mt-1 font-normal
+                            text-sm" content="{ trans :key="field:instructions"
+                            }" }} {{ /if }}
+                        </label>
+                        {{ /unless }}
+
+                        <div class="mt-2 flex flex-col gap-y-2">
+                            {{ field:field }} {{# Inline error. #}}
+                            <template x-if="form.invalid('{{ handle }}')">
+                                <span
+                                    class="mt-1 text-red-700 text-sm font-bold"
+                                    x-text="form.errors.{{ handle }}"
+                                ></span>
+                            </template>
+
+                            {{ if field:instructions && instructions_position
+                            === 'below' }}
+                            <p id="{{ field:handle }}-instructions">
+                                {{ partial:typography/p as="span"
+                                class="text-sm" content="{ trans
+                                :key="field:instructions" }" }}
+                            </p>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </template>
+                {{ /fields }}
+            </fieldset>
+            {{ /sections }} {{# Submit button, disabled on processing. #}}
+            <div class="w-full flex justify-end mt-4">
+                <div
+                    class="md:col-span-12 flex justify-center bg-[#D2830D] text-white py-2 w-full"
+                >
+                    {{ partial:components/button as="button" label="{
+                    trans:strings.form_send }" }} {{ slot:attributes }}
+                    @click.prevent="submit" :disabled="form.processing"
+                    :class="{ 'opacity-25 cursor-default': form.processing }" {{
+                    /slot:attributes }} {{ /partial:components/button }}
+                </div>
+            </div>
+        </div>
+        {{ /form:create }} {{# Call in the Peak Tools Alpine Based Precognition
+        Form Handler. #}} {{ partial:statamic-peak-tools::snippets/form_handler
+        }} {{ /if }}
+    </div>
+</div>
+{{ /partial:page_builder/block }}
+
+<!-- End: /page_builder/_form.antlers.html -->
