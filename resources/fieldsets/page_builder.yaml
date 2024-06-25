@@ -30,6 +30,18 @@ fields:
               fields:
                 -
                   import: cards
+        projektid:
+          display: Projektid
+          instructions: Projektid
+          icon: favorite-award
+          sets:
+            index_content:
+              display: 'Index content'
+              instructions: 'Render the currently mounted entries if available.'
+              icon: file-content-list
+              fields:
+                -
+                  import: index_content
         text:
           display: Text
           instructions: 'Text based blocks.'

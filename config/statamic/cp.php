@@ -56,6 +56,12 @@ return [
             'limit' => '5',
             'width' => 100,
         ],
+        [
+            'type' => 'collection',
+            'collection' => 'projektid',
+            'width' => 50
+        ],
+        
     ],
 
     /*

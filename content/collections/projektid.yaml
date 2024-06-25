@@ -1,0 +1,12 @@
+title: Projektid
+route: '/{mount}/{slug}'
+layout: layout
+template: projektid/show
+revisions: false
+date: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+mount: 21450f11-5205-4803-9bf1-6b2e2aa4c764
+slugs: true

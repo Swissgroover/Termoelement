@@ -1,0 +1,16 @@
+{{#
+    @name Projektid show
+    @desc The Projektid show template.
+#}}
+
+<!-- /projektid/show.antlers.html -->
+<main class="py-12 md:py-16 lg:py-24 stack-12 md:stack-16 lg:stack-24" id="content">
+    <header class="fluid-grid">
+        {{ partial:typography/h1 :content="title" class="span-content" }}
+    </header>
+
+    {{ page_builder scope="block" }}
+        {{ partial src="page_builder/{type}" }}
+    {{ /page_builder }}
+</main>
+<!-- /projektid/show.antlers.html -->
