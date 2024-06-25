@@ -1,0 +1,33 @@
+{{#
+    @name Teenused index
+    @desc The Teenused index template.
+#}}
+
+<!-- /teenused/index.antlers.html -->
+<main class="py-12 md:py-16 lg:py-24 stack-12 md:stack-16 lg:stack-24" id="content">
+    {{ page_builder scope="block" }}
+        {{ partial src="page_builder/{type}" }}
+    {{ /page_builder }}
+</main>
+<!-- End: /teenused/index.antlers.html -->
+
+{{ section:index_content }}
+    <!-- /teenused/index.antlers.html -->
+    <div class="span-content grid grid-cols-12 gap-fluid-grid-gap">
+        {{ collection:teenused sort="title" paginate="true" limit="10" as="items" }}
+            {{ unless no_results }}
+                {{ items }}
+                    <div class="col-span-12 md:col-span-6">
+                        <a class="underline" href="{{ url }}">{{ title }}</a>
+                    </div>
+                {{ /items }}
+            {{ else }}
+                <div class="col-span-12">
+                    {{ trans:strings.no_results }}
+                </div>
+            {{ /unless }}
+            {{ partial:statamic-peak-tools::components/pagination class="col-span-12" }}
+        {{ /collection:teenused }}
+    </div>
+    <!-- End: /teenused/index.antlers.html -->
+{{ /section:index_content }}

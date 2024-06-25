@@ -34,6 +34,15 @@ editor:
     - 'view contact form submissions'
     - 'delete contact form submissions'
     - 'access default site'
+    - 'view teenused entries'
+    - 'edit teenused entries'
+    - 'create teenused entries'
+    - 'delete teenused entries'
+    - 'publish teenused entries'
+    - 'reorder teenused entries'
+    - 'edit other authors teenused entries'
+    - 'publish other authors teenused entries'
+    - 'delete other authors teenused entries'
 marketeer:
   title: Marketeer
   permissions:

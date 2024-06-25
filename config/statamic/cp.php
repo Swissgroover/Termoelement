@@ -61,6 +61,11 @@ return [
             'collection' => 'projektid',
             'width' => 50
         ],
+        [
+            'type' => 'collection',
+            'collection' => 'teenused',
+            'width' => 50
+        ],
         
     ],
 

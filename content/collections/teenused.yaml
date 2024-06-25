@@ -1,0 +1,12 @@
+title: Teenused
+route: '/{mount}/{slug}'
+layout: layout
+template: teenused/show
+revisions: false
+date: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+mount: 6197762f-1366-4893-be81-80771f2eef5e
+slugs: true
