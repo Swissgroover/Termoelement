@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 47c8f4cc-fd33-4db3-9006-fa792d5d5dd5
-updated_at: 1719302033
+updated_at: 1719302115
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -37,10 +37,9 @@ page_builder:
         entry: 6197762f-1366-4893-be81-80771f2eef5e
         button_type: inline
         attr_title: 'Tutvu meie pakutavate teenustega'
-    toggle_field: false
+    toggle_field: true
     type: hero
     enabled: true
-    hero_title: 'Mida me teeme'
     image: background/hero.png
     size: md
 ---
