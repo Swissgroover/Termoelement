@@ -1,0 +1,27 @@
+<div class="bg-[#507279]">
+    {{ partial:page_builder/block }} {{ if toggle_field === true}}
+    <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap py-20">
+        <div class="col-span-4 col-start-1 flex items-center">
+            {{ buttons }} {{ partial:components/button }} {{ /buttons }}
+        </div>
+        <div class="col-span-8">
+            {{ partial:typography/prose as="article" class="contents
+            leading-normal prose-h3:text-[#FAF3E7]" }} {{ article }} {{ partial
+            src="components/{type}" }} {{ /article }} {{
+            /partial:typography/prose }}
+        </div>
+    </div>
+    {{ else }}
+    <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap py-20">
+        <div class="col-span-8 col-start-1">
+            {{ partial:typography/prose as="article" class="contents
+            leading-normal prose-h3:text-[#FAF3E7]" }} {{ article }} {{ partial
+            src="components/{type}" }} {{ /article }} {{
+            /partial:typography/prose }}
+        </div>
+        <div class="col-span-4 flex items-center">
+            {{ buttons }} {{ partial:components/button }} {{ /buttons }}
+        </div>
+    </div>
+    {{ /if }} {{ /partial:page_builder/block }}
+</div>
