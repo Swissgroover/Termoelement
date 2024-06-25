@@ -12,7 +12,7 @@ typography partial. @set page.page_builder.article #}}
                 class="absolute top-1/3 lg:top-1/2 transform lg:-translate-x-1/3 -translate-y-1/2 flex flex-col justify-center lg:w-1/2 text-white m-8 lg:mx-20"
             >
                 <h1
-                    class="text-[32px] md:text-[42px] lg:text-[4vw] font-bold mb-8"
+                    class="text-[32px] md:text-[42px] lg:text-[4vw] font-bold mb-8 text-[#FAF3E7]"
                 >
                     Professionaalne hooldus
                     <span class="text-[#D2830D]">sinu kodu</span>
@@ -21,11 +21,11 @@ typography partial. @set page.page_builder.article #}}
 
                 <!-- Adjusted styling and added absolute positioning -->
                 {{ partial:typography/prose as="article"
-                class="prose-p:text-white prose-h1:md:text-[31px]
-                prose-h1:lg:text-[61px] prose-h1:font-bold prose-h1:text-white
-                w-[60ch]" }} {{ article }} {{ partial src="components/{type}"
-                inverted="true" }} {{ /article }} {{ /partial:typography/prose
-                }}
+                class="prose-h1:md:text-[31px] prose-h1:lg:text-[61px]
+                prose-h1:font-bold prose-h1:text-[#FAF3E7] w-[60ch]
+                prose-p:text-[#FAF3E7]" }} {{ article }} {{ partial
+                src="components/{type}" inverted="true" }} {{ /article }} {{
+                /partial:typography/prose }}
                 <div class="mt-14 mb-4 flex items-center gap-8">
                     {{ buttons }} {{ partial:components/button }} {{ /buttons }}
                 </div>
@@ -44,7 +44,7 @@ typography partial. @set page.page_builder.article #}}
             >
                 <!-- Adjusted styling and added absolute positioning -->
                 <div
-                    class="text-[32px] md:text-[42px] lg:text-[4vw] font-medium"
+                    class="text-[32px] md:text-[42px] lg:text-[4vw] font-medium text-[#FAF3E7]"
                 >
                     {{ hero_title }}
                 </div>
