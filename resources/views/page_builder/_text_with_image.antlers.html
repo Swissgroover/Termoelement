@@ -1,0 +1,21 @@
+{{ partial:page_builder/block }}
+<div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
+    <div class="col-span-6">
+        {{ partial:typography/prose as="article" class="contents leading-normal"
+        }} {{ article }} {{ partial src="components/{type}" }} {{ /article }} {{
+        /partial:typography/prose }}
+    </div>
+    {{ replicator_field }}
+    <div class="col-span-6 justify-center items-center hidden md:flex relative">
+        <div
+            class="absolute inset-0 w-1/2 h-2/3 border-4 border-[#D2830D]"
+        ></div>
+        <div
+            class="absolute w-1/2 h-2/3 border-4 bottom-0 right-0 border-[#D2830D]"
+        ></div>
+        <img src="{{ glide:image quality="{ quality ?? '600' }"}}" class="w-2/3
+        h-3/4 object-cover aspect-video absolute" cover="true" lazy="true">
+    </div>
+    {{ /replicator_field }}
+</div>
+{{ /partial:page_builder/block }}
