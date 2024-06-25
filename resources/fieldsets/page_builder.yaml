@@ -30,6 +30,27 @@ fields:
               fields:
                 -
                   import: cards
+            hero:
+              display: Hero
+              icon: layout-header
+              fields:
+                -
+                  import: image
+                -
+                  handle: hero_title
+                  field:
+                    type: text
+                    display: 'Hero Title'
+                -
+                  import: article
+                -
+                  import: buttons
+                -
+                  handle: toggle_field
+                  field:
+                    type: toggle
+                    display: 'Toggle Field'
+                    instructions: 'Turn off, when not Hero section'
         projektid:
           display: Projektid
           instructions: Projektid
