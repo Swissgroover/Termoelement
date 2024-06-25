@@ -7,61 +7,52 @@ tabs:
           -
             handle: name
             field:
-              display: Name
+              display: Nimi
               type: text
               validate:
                 - required
                 - 'min:2'
               localizable: true
-              width: 66
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              input_type: text
-              antlers: false
-              hide_display: false
+              placeholder: 'Ees- ja perekonnanimi'
           -
             handle: email
             field:
-              display: 'Email address'
+              display: Meiliaadress
               type: text
               validate:
                 - required
                 - email
               localizable: true
-              width: 66
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              input_type: text
-              antlers: false
-              hide_display: false
+              placeholder: E-mail
+          -
+            handle: telefoni_number
+            field:
+              input_type: number
+              placeholder: Telefoninumber
+              type: text
+              display: Telefoninumber
+          -
+            handle: teema
+            field:
+              options:
+                Hinnapakkumine: Hinnapakkumine
+                Konsultatsioon: Konsultatsioon
+                Torutööd: Torutööd
+              placeholder: 'Vali nimekirjast'
+              type: select
+              display: Teema
+          -
+            handle: files_field
+            field:
+              type: files
+              display: 'Lisa failid'
           -
             handle: message_body
             field:
-              display: Message
+              display: 'Kirjelda projekti'
               type: textarea
               validate:
                 - required
                 - 'min:5'
               localizable: true
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              antlers: false
-              hide_display: false
-          -
-            handle: consent
-            field:
-              inline_label: 'I agree that my submitted data is being collected and stored.'
-              default: false
-              display: Consent
-              type: toggle
-              icon: toggle
-              listable: hidden
-              instructions_position: above
-              validate:
-                - accepted
+              placeholder: 'Sinu sõnum'

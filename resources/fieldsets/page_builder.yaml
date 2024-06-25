@@ -75,3 +75,51 @@ fields:
               fields:
                 -
                   import: article
+            text_with_image:
+              display: 'Text with Image'
+              icon: form-text-field
+              fields:
+                -
+                  import: article
+                -
+                  handle: replicator_field
+                  field:
+                    type: replicator
+                    display: 'Replicator Field'
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                import: image
+                -
+                  handle: toggle_field
+                  field:
+                    type: toggle
+                    display: 'Toggle Field'
+                    instructions: 'Reverse?'
+            form_with_info:
+              display: 'Form with Info'
+              icon: form-address-field
+              fields:
+                -
+                  import: form
+                -
+                  import: article
+            cta:
+              display: CTA
+              icon: align-object-bottom
+              fields:
+                -
+                  import: buttons
+                -
+                  import: article
+                -
+                  handle: toggle_field
+                  field:
+                    type: toggle
+                    display: 'Toggle Field'
+                    instructions: 'Reverse?'

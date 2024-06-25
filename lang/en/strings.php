@@ -13,7 +13,7 @@ return [
     'form_mail_submitted' => 'Submitted',
     'form_mail_title' => 'Contact form',
     'form_mail_url' => config('app.url'),
-    'form_send' => 'Send message',
+    'form_send' => 'Saada sõnum',
     'form_subject_received' => 'Contact form received',
     'form_subject_sent' => 'Contact form sent',
     'form_success' => 'Thank you, we received your message and will contact you as soon as possible.',
