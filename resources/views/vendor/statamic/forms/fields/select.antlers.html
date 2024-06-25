@@ -15,7 +15,7 @@
     {{ autocomplete ?= 'autocomplete="{autocomplete}"' }}
 >
     {{ unless multiple }}
-        <option value>{{ trans key="Please select..." }}</option>
+        <option value>{{ trans key="Vali nimekirjast..." }}</option>
     {{ /unless }}
     {{ foreach:options as="value|label" }}
         <option
