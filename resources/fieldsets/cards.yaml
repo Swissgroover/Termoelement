@@ -7,6 +7,10 @@ fields:
       localizable: true
       display: Title
   -
+    import: article
+  -
+    import: buttons
+  -
     handle: cards
     field:
       reorderable: true
@@ -24,6 +28,8 @@ fields:
             card:
               display: Card
               fields:
+                -
+                  import: image
                 -
                   handle: title
                   field:
