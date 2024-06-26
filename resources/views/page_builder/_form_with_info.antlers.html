@@ -141,19 +141,7 @@
                                             )}}
                                         "
                         >
-                            {{ unless type == 'spacer' }}
-                            <label class="font-light" for="{{ handle }}">
-                                {{ trans :key="field:display" }} {{ if validate
-                                | contains('required') }}
-                                <sup class="text-red-700">*</sup>
-                                {{ /if }} {{ if field:instructions &&
-                                instructions_position === 'above' }} {{
-                                partial:typography/p class="mt-1 font-normal
-                                text-sm" content="{ trans
-                                :key="field:instructions" }" }} {{ /if }}
-                            </label>
-                            {{ /unless }}
-
+                            {{ unless type == 'spacer' }} {{ /unless }}
                             <div class="mt-2 flex flex-col gap-y-2">
                                 {{ field:field }} {{# Inline error. #}}
                                 <template x-if="form.invalid('{{ handle }}')">
