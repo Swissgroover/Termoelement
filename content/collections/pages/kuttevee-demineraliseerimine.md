@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 47c8f4cc-fd33-4db3-9006-fa792d5d5dd5
-updated_at: 1719320647
+updated_at: 1719405912
 page_builder:
   -
     id: lxud999z
@@ -50,7 +50,7 @@ page_builder:
     replicator_field:
       -
         id: lxudajh4
-        image: kontakt.png
+        image: labipesu.png
         size: md
         type: new_set
         enabled: true

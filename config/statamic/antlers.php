@@ -57,4 +57,6 @@ return [
 
     ],
 
+    'version' => env('ANTLERS_VERSION', 'runtime'),
+
 ];

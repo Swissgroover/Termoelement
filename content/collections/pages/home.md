@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 47c8f4cc-fd33-4db3-9006-fa792d5d5dd5
-updated_at: 1719389113
+updated_at: 1719405982
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -45,14 +45,6 @@ page_builder:
   -
     id: lxvju1jb
     article:
-      -
-        type: heading
-        attrs:
-          level: 2
-        content:
-          -
-            type: text
-            text: 'Usaldusväärne lahendus teie küttesüsteemi paigalduseks, hoolduseks ja remondiks.'
       -
         type: bulletList
         content:
@@ -111,13 +103,14 @@ page_builder:
     replicator_field:
       -
         id: lxvjv9qt
-        image: kontakt.png
+        image: labipesu.png
         size: md
         type: new_set
         enabled: true
     toggle_field: false
     type: text_with_image
     enabled: true
+    title: 'Usaldusväärne lahendus teie küttesüsteemi paigalduseks, hoolduseks ja remondiks.'
   -
     id: lxvi4ymx
     title: Teenused
@@ -140,7 +133,7 @@ page_builder:
     cards:
       -
         id: lxvi5ohs
-        image: kontakt.png
+        image: hooldus.png
         size: md
         title: 'Hooldus ja remont'
         text: 'Meie kogemus ja ekspertiis tagavad küttesüsteemide parima hoolduse ja remondi.'
@@ -156,7 +149,7 @@ page_builder:
         enabled: true
       -
         id: lxvi6673
-        image: kontakt.png
+        image: vesi.png
         size: md
         title: Demineraliseerimine
         text: 'Korrosiooni vältimiseks küttesüsteemides, teostame küttevee demineraliseerimist otse objektil.'
@@ -173,7 +166,7 @@ page_builder:
         enabled: true
       -
         id: lxvi6n6j
-        image: kontakt.png
+        image: konsultatsioon.png
         size: md
         title: Konsultatsioon
         text: 'Aitame leida mõistliku lahenduse olemasoleva või uue küttesüsteemi paigalduseks ja hoolduseks!'
@@ -189,5 +182,149 @@ page_builder:
         type: card
         enabled: true
     type: cards
+    enabled: true
+  -
+    id: lxvl9yjc
+    buttons:
+      -
+        id: lxvla7sq
+        label: 'Tutvu teenustega'
+        link_type: entry
+        target_blank: false
+        entry: 6197762f-1366-4893-be81-80771f2eef5e
+        button_type: button
+        attr_title: 'Tutvu teenustega'
+    article:
+      -
+        type: heading
+        attrs:
+          level: 3
+        content:
+          -
+            type: text
+            text: 'Vajad asjatundlikku abi oma kodu küttesüsteemiga? '
+          -
+            type: hardBreak
+          -
+            type: text
+            text: 'Võta ühendust ja lase meil hoolitseda sinu kodu soojuse eest.'
+    toggle_field: false
+    type: cta
+    enabled: true
+  -
+    id: lxvqzjd3
+    replicator_field:
+      -
+        id: lxvqzuld
+        article:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                marks:
+                  -
+                    type: bold
+                text: Professionaalsus
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'Oleme kiired, efektiivsed ja professionaalsed, tagades tööde õigeaegse lõpetamise ja teie küttesüsteemi kiire taastamise.'
+        type: new_set
+        enabled: true
+      -
+        id: lxvr03v7
+        article:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                marks:
+                  -
+                    type: bold
+                text: Kvaliteet
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'Meie töö põhineb kõrgetel kvaliteedistandarditel, tagades igale kliendile parima võimaliku tulemuse.'
+        type: new_set
+        enabled: true
+      -
+        id: lxvr0bgh
+        article:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                marks:
+                  -
+                    type: bold
+                text: Kompetents
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'Omame rikkalikku kogemust ja ekspertiisi küttesüsteemide ehituses.'
+        type: new_set
+        enabled: true
+      -
+        id: lxvr0f7g
+        article:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                marks:
+                  -
+                    type: bold
+                text: Personaalsus
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'Pakume personaalset ja kliendikeskset lähenemist igale projektile ning kohandume vastavalt teie vajadustele.'
+        type: new_set
+        enabled: true
+    image: miksvalida.png
+    size: md
+    title: 'Miks valida meid'
+    type: bullet_with_image
+    enabled: true
+  -
+    id: lxvl8cj0
+    buttons:
+      -
+        id: lxvl8m8o
+        label: 'Võta meiega ühendust'
+        link_type: entry
+        target_blank: false
+        entry: 5c526dbf-9dd7-4c52-98d8-54e00ebddfb6
+        button_type: button
+        attr_title: 'Võta meiega ühendust'
+    article:
+      -
+        type: heading
+        attrs:
+          level: 3
+        content:
+          -
+            type: text
+            text: 'Vajate professionaalset lahendust? '
+          -
+            type: hardBreak
+          -
+            type: text
+            text: 'Vaadake meie teenuste valikut ja võtke meiega ühendust!'
+    toggle_field: true
+    type: cta
     enabled: true
 ---
