@@ -1,39 +1,64 @@
-{{ partial:page_builder/block }}
-<div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
-    {{ if toggle_field === true }}
-    <div class="col-span-6">
-        {{ partial:typography/prose as="article" class="contents leading-normal"
-        }} {{ article }} {{ partial src="components/{type}" }} {{ /article }} {{
-        /partial:typography/prose }}
-    </div>
-    {{ replicator_field }}
-    <div class="col-span-6 justify-center items-center hidden md:flex relative">
+<section class="py-12 md:py-16 lg:py-24 stack-12 md:stack-16 lg:stack-24">
+    {{ partial:page_builder/block }}
+    <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
+        {{ if toggle_field === true }}
+        <div class="col-span-7">
+            <div>
+                {{ if title != null }}
+                <div class="flex flex-col">
+                    <div class="text-[32px] md:text-[42px] font-medium">
+                        {{ title }}
+                    </div>
+                    <span class="bg-[#D2830D] h-1 w-1/3"></span>
+                </div>
+                {{ /if }}
+            </div>
+            {{ partial:typography/prose as="article" class="contents
+            leading-normal" }} {{ article }} {{ partial src="components/{type}"
+            }} {{ /article }} {{ /partial:typography/prose }}
+        </div>
+        {{ replicator_field }}
         <div
-            class="absolute inset-0 w-1/2 h-2/3 border-4 border-[#D2830D]"
-        ></div>
+            class="col-span-7 md:col-span-5 justify-center items-center flex relative"
+        >
+            <div
+                class="hidden md:flex absolute inset-0 w-1/2 h-2/3 border-4 border-[#D2830D]"
+            ></div>
+            <div
+                class="hidden md:flex absolute w-1/2 h-2/3 border-4 bottom-0 right-0 border-[#D2830D]"
+            ></div>
+            <img src="{{ glide:image quality="{ quality ?? '600' }"}}"
+            class="object-cover aspect-video md:absolute" cover="false"
+            lazy="true">
+        </div>
+        {{ /replicator_field }} {{ else }} {{ replicator_field }}
         <div
-            class="absolute w-1/2 h-2/3 border-4 bottom-0 right-0 border-[#D2830D]"
-        ></div>
-        <img src="{{ glide:image quality="{ quality ?? '600' }"}}" class="w-2/3
-        h-3/4 object-cover aspect-video absolute" cover="true" lazy="true">
+            class="col-span-7 md:col-span-5 justify-center items-center flex relative"
+        >
+            <div
+                class="hidden md:flex absolute inset-0 w-1/2 h-2/3 border-4 border-[#D2830D]"
+            ></div>
+            <div
+                class="hidden md:flex absolute w-1/2 h-2/3 border-4 bottom-0 right-0 border-[#D2830D]"
+            ></div>
+            <img src="{{ glide:image quality="{ quality ?? '600' }"}}"
+            class="object-cover aspect-video md:absolute" cover="false"
+            lazy="true">
+        </div>
+        {{ /replicator_field }}
+        <div class="col-span-7">
+            {{ if title != null }}
+            <div class="flex flex-col mb-8">
+                <div class="text-[32px] md:text-[42px] font-medium">
+                    {{ title }}
+                </div>
+                <span class="bg-[#D2830D] h-1 w-1/3"></span>
+            </div>
+            {{ /if }} {{ partial:typography/prose as="article" class="contents
+            leading-normal" }} {{ article }} {{ partial src="components/{type}"
+            }} {{ /article }} {{ /partial:typography/prose }}
+        </div>
+        {{ /if }}
     </div>
-    {{ /replicator_field }} {{ else }} {{ replicator_field }}
-    <div class="col-span-6 justify-center items-center hidden md:flex relative">
-        <div
-            class="absolute inset-0 w-1/2 h-2/3 border-4 border-[#D2830D]"
-        ></div>
-        <div
-            class="absolute w-1/2 h-2/3 border-4 bottom-0 right-0 border-[#D2830D]"
-        ></div>
-        <img src="{{ glide:image quality="{ quality ?? '600' }"}}" class="w-2/3
-        h-3/4 object-cover aspect-video absolute" cover="true" lazy="true">
-    </div>
-    {{ /replicator_field }}
-    <div class="col-span-6">
-        {{ partial:typography/prose as="article" class="contents leading-normal"
-        }} {{ article }} {{ partial src="components/{type}" }} {{ /article }} {{
-        /partial:typography/prose }}
-    </div>
-    {{ /if }}
-</div>
-{{ /partial:page_builder/block }}
+    {{ /partial:page_builder/block }}
+</section>

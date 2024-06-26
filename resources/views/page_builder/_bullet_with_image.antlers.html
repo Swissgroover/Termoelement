@@ -1,0 +1,42 @@
+<section
+    class="py-12 md:py-16 lg:py-24 stack-12 md:stack-16 lg:stack-24 bg-[#E0E9EA]"
+>
+    {{ partial:page_builder/block }}
+    <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
+        <div class="col-span-7">
+            <div class="flex flex-col">
+                <div class="text-[32px] md:text-[42px] font-medium">
+                    {{ title }}
+                </div>
+                <span class="bg-[#D2830D] h-1 w-1/3"></span>
+            </div>
+            <div class="flex flex-col">
+                {{ replicator_field}} {{ partial:typography/prose as="article"
+                class="contents leading-normal" }}
+                <div class="flex">
+                    <span class="py-4 px-2">
+                        {{ heroicon:solid:check-circle class="w-8 h-8
+                        text-[#30565E]"}}
+                    </span>
+                    {{ article }} {{ partial src="components/{type}" }} {{
+                    /article }}
+                </div>
+                {{ /partial:typography/prose }} {{ /replicator_field }}
+            </div>
+        </div>
+        <div
+            class="col-span-7 md:col-span-5 justify-center items-center flex relative"
+        >
+            <div
+                class="hidden md:flex absolute inset-0 w-1/2 h-2/3 border-4 border-[#D2830D]"
+            ></div>
+            <div
+                class="hidden md:flex absolute w-1/2 h-2/3 border-4 bottom-0 right-0 border-[#D2830D]"
+            ></div>
+            <img src="{{ glide:image quality="{ quality ?? '600' }"}}"
+            class="object-cover aspect-video md:absolute" cover="false"
+            lazy="true">
+        </div>
+    </div>
+    {{ /partial:page_builder/block }}
+</section>

@@ -1,5 +1,5 @@
 <!-- /page_builder/_cards.antlers.html -->
-<div class="bg-[#507279] py-8">
+<div class="bg-[#26454B] py-16">
     {{ partial:page_builder/block }}
         <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
             <div class="flex flex-col justify-between items-start md:col-span-12 lg:col-span-3 mb-8">
@@ -28,22 +28,20 @@
                         () => void
                     )}}
                 ">
-                <img src="{{ glide:image quality="{ quality ?? '600' }"}}" class="hidden md:flex aspect-video md:object-cover mb-6" cover="true" lazy="true">
-                <article class="px-6 flex flex-col h-full justify-between mt-8 md:mt-0 mb-8">
+                <img src="{{ glide:image quality="{ quality ?? '600' }"}}" class="hidden md:flex w-full aspect-video md:object-cover mb-8" cover="true" lazy="true">
+                <article class="px-6 flex flex-col justify-between h-full mt-8 md:mt-0 mb-8">
                     <div class="">
                         {{ if button }}
                             {{ button }}
-                                <a class="group " {{ partial:statamic-peak-tools::snippets/button_attributes }} aria-hidden="true" tabindex="-1">
+                                <a class="group" {{ partial:statamic-peak-tools::snippets/button_attributes }} aria-hidden="true" tabindex="-1">
                                     {{ partial:typography/h3 class="mb-2" color="group-hover:underline" :content="title" }}
                                 </a>
                             {{ /button }}
                             {{ partial:typography/h3 class="sr-only" :content="title" }}
-                        {{ else }}
-                            {{ partial:typography/h3 class="mb-2" :content="title" }}
                         {{ /if }}
 
                         {{ if text }}
-                            {{ partial:typography/p class="mb-4" :content="text" }}
+                            {{ partial:typography/p class="" :content="text" }}
                         {{ /if }}
                     </div>
                     {{ button }}

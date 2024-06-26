@@ -80,6 +80,11 @@ fields:
               icon: form-text-field
               fields:
                 -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
                   import: article
                 -
                   handle: replicator_field
@@ -123,3 +128,28 @@ fields:
                     type: toggle
                     display: 'Toggle Field'
                     instructions: 'Reverse?'
+            bullet_with_image:
+              display: 'Bullet with Image'
+              icon: direction-buttons
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: replicator_field
+                  field:
+                    type: replicator
+                    display: 'Replicator Field'
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                import: article
+                -
+                  import: image

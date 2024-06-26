@@ -1,14 +1,14 @@
 {{# @name Article @desc The article page builder block. It extends the prose
 typography partial. @set page.page_builder.article #}}
-<section class="-mt-12 md:-mt-16 lg:-mt-24">
+<section class="">
     {{ if toggle_field === true }}
     <div
         class="fluid-grid bg-[url('/public/images/background/hero.png')] bg-cover"
     >
         <div class="span-content md:grid md:grid-cols-12 gap-fluid-grid-gap">
-            <div class="md:col-span-9 flex flex-col my-8">
+            <div class="md:col-span-7 flex flex-col my-32">
                 <h1
-                    class="text-[32px] md:text-[42px] lg:text-[4vw] font-bold mb-8 text-[#FAF3E7]"
+                    class="text-[32px] md:text-[42px] lg:text-[4vw] leading-tight mb-4 text-[#FAF3E7]"
                 >
                     Professionaalne hooldus
                     <span class="text-[#D2830D]">sinu kodu</span>
