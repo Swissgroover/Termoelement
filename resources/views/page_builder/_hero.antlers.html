@@ -1,16 +1,12 @@
 {{# @name Article @desc The article page builder block. It extends the prose
 typography partial. @set page.page_builder.article #}}
-<section class="-mt-12 md:-mt-16 lg:-mt-24 bg-white relative">
+<section class="-mt-12 md:-mt-16 lg:-mt-24">
     {{ if toggle_field === true }}
-    <div class="grid grid-cols-1 justify-center overflow-hidden">
-        <div class="flex flex-col items-center static">
-            <!-- Added relative positioning -->
-            <img src="{{ glide:image fit="crop_focal" :bg="bg" quality="{
-            quality ?? '200' }}"}}" class="w-full aspect-square lg:aspect-video
-            object-cover max-h-[650px]" loading="lazy">
-            <div
-                class="absolute top-1/3 lg:top-1/2 transform lg:-translate-x-1/3 -translate-y-1/2 flex flex-col justify-center lg:w-1/2 text-white m-8 lg:mx-20"
-            >
+    <div
+        class="fluid-grid bg-[url('/public/images/background/hero.png')] bg-cover"
+    >
+        <div class="span-content md:grid md:grid-cols-12 gap-fluid-grid-gap">
+            <div class="md:col-span-9 flex flex-col my-8">
                 <h1
                     class="text-[32px] md:text-[42px] lg:text-[4vw] font-bold mb-8 text-[#FAF3E7]"
                 >
@@ -22,27 +18,24 @@ typography partial. @set page.page_builder.article #}}
                 <!-- Adjusted styling and added absolute positioning -->
                 {{ partial:typography/prose as="article"
                 class="prose-h1:md:text-[31px] prose-h1:lg:text-[61px]
-                prose-h1:font-bold prose-h1:text-[#FAF3E7] w-[60ch]
+                prose-h1:font-bold prose-h1:text-[#FAF3E7] md:w-[48ch]
                 prose-p:text-[#FAF3E7]" }} {{ article }} {{ partial
                 src="components/{type}" inverted="true" }} {{ /article }} {{
                 /partial:typography/prose }}
-                <div class="mt-14 mb-4 flex items-center gap-8">
+                <div
+                    class="mt-14 mb-4 flex flex-col md:flex-row items-start md:items-center gap-8"
+                >
                     {{ buttons }} {{ partial:components/button }} {{ /buttons }}
                 </div>
             </div>
         </div>
     </div>
     {{ else }}
-    <div class="grid grid-cols-1 justify-center overflow-hidden">
-        <div class="flex flex-col items-center static">
-            <!-- Added relative positioning -->
-            <img src="{{ glide:image fit="crop_focal" :bg="bg" quality="{
-            quality ?? '200' }}"}}" class="w-full aspect-square lg:aspect-video
-            object-cover max-h-[300px]" loading="lazy">
-            <div
-                class="absolute top-1/3 lg:top-1/2 transform lg:-translate-x-1/3 -translate-y-1/2 flex flex-col justify-center lg:w-1/2 text-white m-8 lg:mx-20"
-            >
-                <!-- Adjusted styling and added absolute positioning -->
+    <div
+        class="fluid-grid bg-[url('/public/images/background/hero.png')] bg-cover"
+    >
+        <div class="span-content md:grid md:grid-cols-12 gap-fluid-grid-gap">
+            <div class="md:col-span-9 flex flex-col my-16">
                 <div
                     class="text-[32px] md:text-[42px] lg:text-[4vw] font-medium text-[#FAF3E7]"
                 >
