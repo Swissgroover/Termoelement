@@ -2,3 +2,7 @@ name: Info@termoelement.ee
 super: true
 id: 47c8f4cc-fd33-4db3-9006-fa792d5d5dd5
 password_hash: $2y$12$fG4F1QZy0/F3DToLW3XSlewngX6KmZS0A/M9r70UGmW.6n7Zmwmau
+preferences:
+  assets:
+    images:
+      mode: grid
