@@ -1,0 +1,47 @@
+{{ partial:page_builder/block }} {{ replicator_field }}
+<div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap mb-12">
+    <div
+        class="col-start-1 lg:col-start-1 col-span-12 lg:col-span-12"
+        x-data="{selected:0}"
+        @click.away="selected = null"
+    >
+        <ul class="shadow-box">
+            <li class="relative my-2">
+                <button
+                    type="button"
+                    class="w-full text-left"
+                    @click="selected !== 1 ? selected = 1 : selected = 0"
+                >
+                    <div
+                        class="flex items-center justify-between px-4 py-4 bg-[#CDD8DB]"
+                        :class="selected ? 'border-b-2 border-[#E4B56E]' : 'text-black'"
+                    >
+                        <p class="text-[18px] font-semibold">{{ title }}</p>
+                        <span
+                            class="text-xl"
+                            :class="selected ? ' rotate-180' : ''"
+                            >{{ heroicon:mini:arrow-down-circle class="w-5 h-5
+                            text-[#30565E]" }}
+                        </span>
+                    </div>
+                </button>
+
+                <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-900 bg-[#CDD8DB]"
+                    x-ref="container1"
+                    x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                >
+                    {{ partial:typography/prose as="article" class="contents
+                    prose:px-4 leading-normal" }}
+                    <div class="px-4">
+                        {{ article }} {{ partial src="components/{type}" }} {{
+                        /article }}
+                    </div>
+                    {{ /partial:typography/prose }}
+                </div>
+            </li>
+        </ul>
+        {{ /replicator_field }}
+    </div>
+</div>
+{{ /partial:page_builder/block }}

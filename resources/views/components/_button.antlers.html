@@ -18,12 +18,12 @@
                 (button_type === 'button') => 'max-w-full py-3 px-4 leading-none no-underline select-none whitespace-nowrap',
             )}}
             {{ switch(
-                (button_type === 'inline' && !inverted) => 'text-[#30565E] no-underline focus:outline-primary p-2',
-                (button_type === 'button' && !inverted) => 'bg-[#D2830D] text-[#FAF3E7] focus:outline-primary',
+                (button_type === 'inline' && !inverted) => 'text-[#30565E] no-underline focus:outline-[#D2830D] p-2',
+                (button_type === 'button' && !inverted) => 'bg-[#D2830D] text-[#FAF3E7] focus:outline-[#D2830D]',
             )}}
             {{ switch(
                 (button_type === 'inline' && inverted) => 'text-[#FAF3E7] decoration-white focus:outline-white',
-                (button_type === 'button' && inverted) => 'bg-white text-primary focus:outline-white',
+                (button_type === 'button' && inverted) => 'bg-white text-[#D2830D] focus:outline-white',
             )}}
             {{ class }}
         "
