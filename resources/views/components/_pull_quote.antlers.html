@@ -1,8 +1,5 @@
-{{#
-    @name Pull quote
-    @desc The pull quote component. A pull quote with an optional author.
-    @set page.article.pull_quote
-#}}
+{{# @name Pull quote @desc The pull quote component. A pull quote with an
+optional author. @set page.article.pull_quote #}}
 
 <!-- /components/_pull_quote.antlers.html -->
 <figure
@@ -17,12 +14,15 @@
     "
 >
     <blockquote class="p-0 m-0 text-3xl font-bold leading-snug text-neutral">
-        <span class="text-primary">&OpenCurlyDoubleQuote;</span>{{ quote | widont | nl2br }}<span class="text-primary">&CloseCurlyDoubleQuote;</span>
+        <span class="text-[#D2830D]">&OpenCurlyDoubleQuote;</span>{{ quote |
+        widont | nl2br }}<span class="text-[#D2830D]"
+            >&CloseCurlyDoubleQuote;</span
+        >
     </blockquote>
     {{ if author }}
-        <figcaption class="block mt-4 font-bold text-neutral">
-            <span class="text-primary">- </span>{{ author }}
-        </figcaption>
+    <figcaption class="block mt-4 font-bold text-neutral">
+        <span class="text-[#D2830D]">- </span>{{ author }}
+    </figcaption>
     {{ /if }}
 </figure>
 <!-- End: /components/_pull_quote.antlers.html -->
