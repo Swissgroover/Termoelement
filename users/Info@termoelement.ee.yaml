@@ -6,3 +6,10 @@ preferences:
   assets:
     images:
       mode: grid
+  collections:
+    teenused:
+      columns:
+        - title
+        - og_image
+        - slug
+        - status

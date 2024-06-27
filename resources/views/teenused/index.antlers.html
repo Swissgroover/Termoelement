@@ -1,33 +1,59 @@
-{{#
-    @name Teenused index
-    @desc The Teenused index template.
-#}}
+{{# @name Teenused index @desc The Teenused index template. #}}
 
 <!-- /teenused/index.antlers.html -->
-<main class="py-12 md:py-16 lg:py-24 stack-12 md:stack-16 lg:stack-24" id="content">
-    {{ page_builder scope="block" }}
-        {{ partial src="page_builder/{type}" }}
-    {{ /page_builder }}
+<main class="outer-grid" id="content">
+    {{ page_builder scope="block" }} {{ partial src="page_builder/{type}" }}
+    {{/page_builder }}
 </main>
 <!-- End: /teenused/index.antlers.html -->
-
 {{ section:index_content }}
-    <!-- /teenused/index.antlers.html -->
-    <div class="span-content grid grid-cols-12 gap-fluid-grid-gap">
-        {{ collection:teenused sort="title" paginate="true" limit="10" as="items" }}
-            {{ unless no_results }}
-                {{ items }}
-                    <div class="col-span-12 md:col-span-6">
-                        <a class="underline" href="{{ url }}">{{ title }}</a>
-                    </div>
-                {{ /items }}
-            {{ else }}
-                <div class="col-span-12">
-                    {{ trans:strings.no_results }}
+<!-- /teenused/index.antlers.html -->
+<div class="span-content grid grid-cols-12 gap-4 mb-12">
+    {{ collection:teenused paginate="true" limit="10" as="items" }} {{ unless
+    no_results }} {{ items }}
+    <div class="col-span-12 md:col-span-4">
+        {{ if buttons != null }}
+        <div
+            class="flex flex-col border-2 border-[#30565E] bg-[#30565E] text-[#F7F8F9] p-8 h-full"
+        >
+            <div class="">
+                <div class="mb-12">
+                    {{ partial:typography/prose as="article" class="contents
+                    text-[#F7F8F9] prose-h2:text-[#F7F8F9]" }} {{ article }} {{
+                    partial src="components/{type}" }} {{ /article }} {{
+                    /partial:typography/prose }}
                 </div>
-            {{ /unless }}
-            {{ partial:statamic-peak-tools::components/pagination class="col-span-12" }}
-        {{ /collection:teenused }}
+                {{ buttons }}
+                <div class="flex items-center text-[#30565E]">
+                    {{ partial:components/button }}
+                </div>
+                {{ /buttons }}
+            </div>
+        </div>
+        {{ else }}
+        <div
+            class="flex flex-col border-2 border-[#30565E] bg-[#E0E9EA] p-8 h-full"
+        >
+            <a href="{{ url }}" class="">
+                <div class="mb-12">
+                    {{ partial:typography/prose as="article" class="contents
+                    prose-h2:font-normal" }} {{ article }} {{ partial
+                    src="components/{type}" }} {{ /article }} {{
+                    /partial:typography/prose }}
+                </div>
+                <a href="{{ url }}" class="flex justify-between text-[#30565E]">
+                    Loe lähemalt{{ heroicon:mini:arrow-right class="w-5 h-5
+                    text-[#D2830D]" }}
+                </a>
+            </a>
+        </div>
+
+        {{ /if }}
     </div>
-    <!-- End: /teenused/index.antlers.html -->
+    {{ /items }} {{ else }}
+    <div class="col-span-12">{{ trans:strings.no_results }}</div>
+    {{ /unless }} {{ partial:statamic-peak-tools::components/pagination
+    class="col-span-12" }} {{ /collection:teenused }}
+</div>
+<!-- End: /teenused/index.antlers.html -->
 {{ /section:index_content }}
