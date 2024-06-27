@@ -1,0 +1,40 @@
+<section class="flex flex-col span-content mx-12 md:mx-0 md:grid md:grid-cols-12 gap-fluid-grid-gap mt-12">
+    <div class="col-start-2 col-span-4 w-full mb-8">
+        {{ partial:typography/prose as="article" class="contents" }}
+            {{ article }}
+                {{ partial src="components/{type}" }}
+            {{ /article }}
+        {{ /partial:typography/prose }}
+    </div>
+    <div class="col-start-9 col-span-3 items-center justify-end flex">
+            <a href="/projektid" class="flex items-center gap-2 text-[#30565E] font-semibold">Vaata rohkem tehtud töid{{  heroicon:mini:arrow-right class="w-5 h-5 text-[#D2830D]" }}</a>
+
+    </div>
+    
+</section>
+
+<section class="grid grid-cols-12 gap-8">
+    <div class="flex flex-col md:grid grid-cols-12 col-start-2 col-span-10 gap-8 my-12">
+        {{ block:lingid }}
+        <a aria-label="next page "
+        style="background: url(' {{ glide:image format="webp" quality="{ quality ?? '5' }" }} ') no-repeat center; background-size: cover;" class="
+        flex flex-col justify-between items-start text-white no-underline md:col-span-6 lg:col-span-4"
+            aria-labelledby="{{ title | slugify }}"
+          {{ button }}
+                                <a class="group" {{ partial:statamic-peak-tools::snippets/button_attributes }} aria-hidden="true" tabindex="-1">
+                                    {{ partial:typography/h3 class="mb-2" color="group-hover:underline" :content="title" }}
+                                </a>
+                            {{ /button }}
+        >
+        <div class="flex justify-end w-full pt-4 pr-4">
+            <span>{{  heroicon:mini:arrow-up-right class="w-5 h-5" }}</span>
+        </div>
+        <span id="{{ title | slugify }}" class="w-full flex items-end aspect-video">
+            <p class="uppercase font-normal lg:text-[23px] pl-8 pb-6">{{ title }}</p>
+        </span>
+            {{ partial:components/button as="span" faux="true" }}
+        </a>
+    {{ /block:lingid }}
+    
+    </div>
+</section>
