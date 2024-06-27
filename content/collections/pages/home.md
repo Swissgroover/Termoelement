@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 47c8f4cc-fd33-4db3-9006-fa792d5d5dd5
-updated_at: 1719405982
+updated_at: 1719476528
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -184,34 +184,6 @@ page_builder:
     type: cards
     enabled: true
   -
-    id: lxvl9yjc
-    buttons:
-      -
-        id: lxvla7sq
-        label: 'Tutvu teenustega'
-        link_type: entry
-        target_blank: false
-        entry: 6197762f-1366-4893-be81-80771f2eef5e
-        button_type: button
-        attr_title: 'Tutvu teenustega'
-    article:
-      -
-        type: heading
-        attrs:
-          level: 3
-        content:
-          -
-            type: text
-            text: 'Vajad asjatundlikku abi oma kodu küttesüsteemiga? '
-          -
-            type: hardBreak
-          -
-            type: text
-            text: 'Võta ühendust ja lase meil hoolitseda sinu kodu soojuse eest.'
-    toggle_field: false
-    type: cta
-    enabled: true
-  -
     id: lxvqzjd3
     replicator_field:
       -
@@ -299,6 +271,76 @@ page_builder:
     title: 'Miks valida meid'
     type: bullet_with_image
     enabled: true
+  -
+    id: lxvl9yjc
+    buttons:
+      -
+        id: lxvla7sq
+        label: 'Tutvu teenustega'
+        link_type: entry
+        target_blank: false
+        entry: 6197762f-1366-4893-be81-80771f2eef5e
+        button_type: button
+        attr_title: 'Tutvu teenustega'
+    article:
+      -
+        type: heading
+        attrs:
+          level: 3
+        content:
+          -
+            type: text
+            text: 'Vajad asjatundlikku abi oma kodu küttesüsteemiga? '
+          -
+            type: hardBreak
+          -
+            type: text
+            text: 'Võta ühendust ja lase meil hoolitseda sinu kodu soojuse eest.'
+    toggle_field: false
+    type: cta
+    enabled: true
+  -
+    id: lxwxvmwr
+    article:
+      -
+        type: heading
+        attrs:
+          level: 2
+        content:
+          -
+            type: text
+            text: 'Meie tehtud tööd'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Vaata meie töid ja veendu ise! Galeriis nähtavad tööd annavad ülevaate meie kogemustest ja oskustest.'
+    lingid:
+      -
+        id: lxwxwgxw
+        image: labipesu.png
+        size: md
+        title: Test
+        buttons:
+          -
+            id: lxwxx0ly
+            label: test
+            link_type: entry
+            target_blank: false
+            entry: ae48234a-123c-45fe-9567-6ac9e9d5380f
+            button_type: button
+    type: projekti_lingid
+    enabled: true
+    buttons:
+      -
+        id: lxwzgzqs
+        label: 'Vaata Rohkem'
+        link_type: entry
+        target_blank: false
+        entry: 21450f11-5205-4803-9bf1-6b2e2aa4c764
+        button_type: inline
+        attr_title: 'Vaata Rohkem'
   -
     id: lxvl8cj0
     buttons:
