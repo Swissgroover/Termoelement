@@ -11,12 +11,13 @@ tabs:
             field:
               type: text
               required: true
-              input_type: text
               localizable: true
               listable: true
               display: Title
               validate:
                 - required
+          -
+            import: image
       -
         display: 'Page builder'
         fields:
@@ -66,8 +67,6 @@ tabs:
             field:
               type: slug
               localizable: true
-              generate: true
-              listable: hidden
-              display: Slug
               validate:
                 - required
+              display: Slug

@@ -1,0 +1,17 @@
+<section class="py-12 md:py-16 stack-12 md:stack-16">
+    {{ partial:page_builder/block }}
+    <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
+        <div class="col-span-7">
+            <div class="flex flex-col">
+                {{ partial:typography/prose as="article" class="contents
+                leading-normal" }}
+                <div class="flex">
+                    {{ article }} {{ partial src="components/{type}" }} {{
+                    /article }}
+                </div>
+                {{ /partial:typography/prose }}
+            </div>
+        </div>
+    </div>
+    {{ /partial:page_builder/block }}
+</section>

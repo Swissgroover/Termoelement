@@ -1,33 +1,54 @@
-{{#
-    @name Projektid index
-    @desc The Projektid index template.
-#}}
+{{# @name Projects index @desc The Projects index template. #}}
 
-<!-- /projektid/index.antlers.html -->
-<main class="py-12 md:py-16 lg:py-24 stack-12 md:stack-16 lg:stack-24" id="content">
-    {{ page_builder scope="block" }}
-        {{ partial src="page_builder/{type}" }}
-    {{ /page_builder }}
-</main>
-<!-- End: /projektid/index.antlers.html -->
+<!-- /projects/index.antlers.html -->
+<main class="outer-grid" id="content">
+    {{ page_builder scope="block" }} {{ partial src="page_builder/{type}" }} {{
+        /page_builder }}
+        <!-- End: /projects/index.antlers.html -->
+    </main>
+    
+    {{ section:index_content }}
+    <!-- /projects/index.antlers.html -->
+<div
+    class="span-content grid md:grid-cols-12 gap-fluid-grid-gap"
+>
+    {{ collection:projektid sort="title" as="items" }} {{ unless no_results }} {{
+    items }}
+    <a
+        style="background: url(' {{ glide:image format="webp"}} ') no-repeat center; background-size: cover;"
+        class="flex flex-col justify-between items-start text-white no-underline lg:col-span-4"
+        href="{{ url }}"
+    >
+        <div class="flex justify-end w-full pt-4 pr-4">
+            <span>{{ heroicon:mini:arrow-up-right class="w-5 h-5" }}</span>
+        </div>
+        <span
+            id="{{ title | slugify }}"
+            class="w-full flex items-end aspect-video"
+        >
+            <p class="uppercase font-bold text-[23px] pl-8 pb-6">{{ title }}</p>
+        </span>
+    </a>
+    {{ /items }} {{ else }}
+    <div class="md:col-span-6">{{ trans:strings.no_results }}</div>
+    {{ /unless }} {{# {{ partial:statamic-peak-tools::components/pagination
+    class="md:col-span-12" }} #}}
 
-{{ section:index_content }}
-    <!-- /projektid/index.antlers.html -->
-    <div class="span-content grid grid-cols-12 gap-fluid-grid-gap">
-        {{ collection:projektid sort="title" paginate="true" limit="10" as="items" }}
-            {{ unless no_results }}
-                {{ items }}
-                    <div class="col-span-12 md:col-span-6">
-                        <a class="underline" href="{{ url }}">{{ title }}</a>
-                    </div>
-                {{ /items }}
-            {{ else }}
-                <div class="col-span-12">
-                    {{ trans:strings.no_results }}
-                </div>
-            {{ /unless }}
-            {{ partial:statamic-peak-tools::components/pagination class="col-span-12" }}
-        {{ /collection:projektid }}
+    <div class="col-span-full flex justify-center items-center my-8">
+        {{ paginate }}
+        <div class="space-x-8">
+            <a class="p-4 bg-orange text-white" href="{{ prev_page }}"
+                >Eelmine</a
+            >
+            <span>{{ current_page }} / {{ total_pages }}</span>
+            <a class="p-4 bg-orange text-white" href="{{ next_page }}"
+                >Järgmine</a
+            >
+        </div>
+        {{ /paginate }}
     </div>
-    <!-- End: /projektid/index.antlers.html -->
+
+    {{ /collection:projektid }}
+</div>
+<!-- End: /projects/index.antlers.html -->
 {{ /section:index_content }}

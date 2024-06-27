@@ -51,6 +51,16 @@ fields:
                     type: toggle
                     display: 'Toggle Field'
                     instructions: 'Turn off, when not Hero section'
+            galerii:
+              display: Galerii
+              icon: media-image-photo-focus-frame
+              fields:
+                -
+                  handle: gallery_images
+                  field:
+                    container: images
+                    type: assets
+                    display: 'Gallery Images'
         projektid:
           display: Projektid
           instructions: Projektid
@@ -63,6 +73,29 @@ fields:
               fields:
                 -
                   import: index_content
+            projekti_lingid:
+              display: 'Projekti lingid'
+              icon: link
+              fields:
+                -
+                  import: article
+                -
+                  handle: lingid
+                  field:
+                    type: grid
+                    display: Lingid
+                    fields:
+                      -
+                        import: image
+                      -
+                        handle: title
+                        field:
+                          type: text
+                          display: Title
+                      -
+                        import: buttons
+                -
+                  import: buttons
         text:
           display: Text
           instructions: 'Text based blocks.'
@@ -153,3 +186,9 @@ fields:
                                 import: article
                 -
                   import: image
+            sub_title:
+              display: 'Sub Title'
+              icon: form-text-field
+              fields:
+                -
+                  import: article

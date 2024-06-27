@@ -1,0 +1,13 @@
+<section class="mt-12">
+    <div
+        class="my-2 flex flex-col lg:grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8"
+    >
+        {{ gallery_images }}
+        <div class="glightbox" class="box show flex aspect-video object-cover">
+            <img src="{{ glide:url quality="{ quality ?? '600' }"}}"
+            class="col-span-6 not-prose h-[40vh] object-cover aspect-video "
+            cover="false" lazy="true">
+        </div>
+        {{ /gallery_images }}
+    </div>
+</section>
