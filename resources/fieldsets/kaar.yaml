@@ -1,0 +1,11 @@
+title: Kaart
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    import: article
+  -
+    import: buttons
