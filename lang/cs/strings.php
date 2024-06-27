@@ -9,7 +9,7 @@ return [
     'form_mail_closing' => 'S přátelským pozdravem',
     'form_mail_from' => config('app.name'),
     'form_mail_greeting' => 'Vážený',
-    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
+    'form_mail_logo' => config('app.url').'/visuals/logo-oranz.png',
     'form_mail_submitted' => 'Odesláno',
     'form_mail_title' => 'Kontaktní formulář',
     'form_mail_url' => config('app.url'),

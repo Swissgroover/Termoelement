@@ -7,12 +7,17 @@
     >
         <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
             <div class="col-span-3 space-y-2">
-                <img
-                    src="/favicons/logo.png"
-                    class="select-none {{ class }}"
-                    width="{{ width }}"
-                    alt="{{ config:app:name }}"
-                />
+                <a
+                    aria-label="Logo {{ config:app:name }}"
+                    href="{{ site:url }}"
+                >
+                    <img
+                        src="/visuals/logo-sinine.png"
+                        class="select-none hidden md:flex h-[125px] w-[200px] object-cover {{ class }}"
+                        width="{{ width }}"
+                        alt="{{ config:app:name }}"
+                    />
+                </a>
                 <p class="">
                     Meie kogenud meeskond pakub kiireid ja professionaalseid
                     küttesüsteemide remondi- ja hooldusteenuseid Saaremaal,
@@ -26,16 +31,18 @@
                     <p class="text-xl font-bold">Menüü</p>
                     <span class="bg-[#D2830D] h-0.5 w-2/3"></span>
                 </div>
-                <p>Ettevõttest</p>
-                <p>Teenused</p>
-                <p>Tehtud tööd</p>
+                <div class="flex flex-col">
+                    <a href="/kontakt">Ettevõttest</a>
+                    <a href="/teenused">Teenused</a>
+                    <a href="/projektid">Tehtud tööd</a>
+                </div>
             </div>
             <div class="col-span-3 space-y-2">
                 <div class="flex flex-col">
                     <p class="text-xl font-bold">Hea teada</p>
                     <span class="bg-[#D2830D] h-0.5 w-2/3"></span>
                 </div>
-                <p>KKK</p>
+                <a href="/kkk">KKK</a>
                 <p>Privaatsuspoliitika</p>
             </div>
             <div class="col-span-3 space-y-2">
@@ -61,23 +68,23 @@
             class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 text-xs font-bold mt-8"
         >
             <span
-                >Copyrights. Kõik õigused kaitstud. &copy; {{ now | format('Y')
-                }} {{ configuration:copyright_name ?? config:app:name }}
+                >Kõik õigused kaitstud. &copy; {{ now | format('Y') }} {{
+                configuration:copyright_name ?? config:app:name }}
             </span>
 
             {{# Let's users reset consent when you use the consent banner. #}}
             {{ yield:reset_consent }}
         </div>
         {{ if social_media:social_media }}
-        <div class="flex space-x-2">
+        <div class="flex space-x-2 pt-4">
             {{ social_media:social_media }}
             <a
-                class="p-1 -m-1 text-neutral text-neutral/50 focus:outline-none focus-visible:ring-2 ring-primary"
+                class="p-1 -m-1 text-neutral text-neutral/50"
                 href="{{ prefix }}{{ handle }}"
                 rel="noopener{{ type == 'mastodon' ?= ' me' }}"
                 aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}"
                 target="_blank"
-                >{{ svg :src="type" class="w-3 h-3 overflow-visible
+                >{{ svg :src="type" class="w-5 h-5 overflow-visible
                 fill-current" alt="" aria-hidden="true" sanitize="true" }}</a
             >
             {{ /social_media:social_media }}

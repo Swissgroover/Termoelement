@@ -8,7 +8,7 @@ return [
     'form_mail_closing' => 'Vennleg helsing',
     'form_mail_from' => config('app.name'),
     'form_mail_greeting' => 'Kjære',
-    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
+    'form_mail_logo' => config('app.url').'/visuals/logo-oranz.png',
     'form_mail_submitted' => 'Levert',
     'form_mail_title' => 'Kontaktskjema',
     'form_mail_url' => config('app.url'),
