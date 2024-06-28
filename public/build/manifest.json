@@ -1,0 +1,17 @@
+{
+  "public/images/background/hero.png": {
+    "file": "assets/hero-Bpswy64Z.png",
+    "src": "public/images/background/hero.png"
+  },
+  "resources/css/site.css": {
+    "file": "assets/site-s3l5Z8bO.css",
+    "src": "resources/css/site.css",
+    "isEntry": true
+  },
+  "resources/js/site.js": {
+    "file": "assets/site-BSssKD_c.js",
+    "name": "site",
+    "src": "resources/js/site.js",
+    "isEntry": true
+  }
+}
