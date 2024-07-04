@@ -6,7 +6,7 @@ article:
   -
     type: heading
     attrs:
-      level: 2
+      level: 3
     content:
       -
         type: text
@@ -23,5 +23,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 47c8f4cc-fd33-4db3-9006-fa792d5d5dd5
-updated_at: 1720113222
+updated_at: 1720113993
 ---

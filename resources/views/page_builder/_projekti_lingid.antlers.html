@@ -14,15 +14,15 @@
 
 <section class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
     <div class="flex flex-col md:grid grid-cols-12 col-span-12 gap-8 my-12">
-        {{ block:lingid }}
-        <a aria-label="next page "
+    {{ block:lingid }}
+        <div
         style="background: url(' {{ glide:image format="webp" quality="{ quality ?? '5' }" }} ') no-repeat center; background-size: cover;" class="
         flex flex-col justify-between items-start text-white no-underline md:col-span-6 lg:col-span-4"
             aria-labelledby="{{ title | slugify }}"
           {{ button }}
-                <a class="group" {{ partial:statamic-peak-tools::snippets/button_attributes }} aria-hidden="true" tabindex="-1">
+                <p {{ partial:statamic-peak-tools::snippets/button_attributes }} aria-hidden="true" tabindex="-1">
                     {{ partial:typography/h3 class="mb-2" color="group-hover:underline" :content="title" }}
-                </a>
+                </p>
             {{ /button }}
         >
         <div class="flex justify-end w-full pt-4 pr-4">
@@ -34,7 +34,6 @@
             {{ partial:components/button as="span" faux="true" }}
         </a>
     {{ /block:lingid }}
-    
     </div>
 </section>
 {{ /partial:page_builder/block }}

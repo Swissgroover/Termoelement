@@ -1,10 +1,11 @@
-{{ partial:page_builder/block }} {{ replicator_field }}
+{{ partial:page_builder/block }}
 <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap mb-12">
     <div
         class="col-start-1 lg:col-start-1 col-span-12 lg:col-span-12"
         x-data="{selected:0}"
         @click.away="selected = null"
     >
+        {{ replicator_field }}
         <ul class="shadow-box">
             <li class="relative my-2">
                 <button
@@ -25,7 +26,6 @@
                         </span>
                     </div>
                 </button>
-
                 <div
                     class="relative overflow-hidden transition-all max-h-0 duration-900 bg-[#CDD8DB]"
                     x-ref="container1"

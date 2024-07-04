@@ -32,20 +32,20 @@
         </div>
         {{ else }}
         <div
-            class="flex flex-col border-2 border-[#30565E] bg-[#E0E9EA] p-8 h-full"
+            class="flex flex-col border-2 border-[#30565E] bg-[#E0E9EA] p-8 h-full hover:bg-[#E0E9EA]/50 justify-between"
         >
-            <a href="{{ url }}" class="">
+            <a href="{{ url }}" class="flex flex-col justify-center">
                 <div class="mb-12">
                     {{ partial:typography/prose as="article" class="contents
                     prose-h2:font-normal" }} {{ article }} {{ partial
                     src="components/{type}" }} {{ /article }} {{
                     /partial:typography/prose }}
                 </div>
-                <a href="{{ url }}" class="flex justify-between text-[#30565E]">
-                    Loe lähemalt{{ heroicon:mini:arrow-right class="w-5 h-5
-                    text-[#D2830D]" }}
-                </a>
             </a>
+            <p class="flex text-[#30565E] justify-end">
+                Loe lähemalt{{ heroicon:mini:arrow-right class="w-5 h-5
+                text-[#D2830D]" }}
+            </p>
         </div>
 
         {{ /if }}
