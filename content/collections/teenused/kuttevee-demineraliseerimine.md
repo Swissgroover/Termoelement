@@ -16,12 +16,12 @@ article:
     content:
       -
         type: text
-        text: 'Eemaldame kütteveest mineraalained, ennetades katlakivi ja korrosiooni teket.'
+        text: 'Korrosiooni vältimiseks küttesüsteemides, teostame küttevee demineraliseerimist otse objektil. Spetsiaalsete vaigukottide abil demineraliseerime küttevee ning keemia abil stabiliseerime pH-taseme.'
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 47c8f4cc-fd33-4db3-9006-fa792d5d5dd5
-updated_at: 1719490943
+updated_at: 1720113266
 ---

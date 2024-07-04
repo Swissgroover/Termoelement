@@ -10,6 +10,10 @@ tree:
     entry: 21450f11-5205-4803-9bf1-6b2e2aa4c764
     title: 'Tehtud Tööd'
   -
+    id: 936448d9-19bf-456d-b114-ad0b0911e67f
+    title: Termopildistamine
+    url: 'https://termokaamera.ee/'
+  -
     id: 7185b1e8-9e93-44eb-9d54-5869c1f8e4fd
     entry: 5c526dbf-9dd7-4c52-98d8-54e00ebddfb6
     title: Kontakt
