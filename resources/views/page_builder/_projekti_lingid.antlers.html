@@ -1,39 +1,42 @@
 {{ partial:page_builder/block }}
-<section class="flex flex-col span-content md:grid md:grid-cols-12 gap-fluid-grid-gap mt-12">
+<section
+    class="flex flex-col span-content md:grid md:grid-cols-12 gap-fluid-grid-gap mt-12"
+>
     <div class="col-span-6 w-full mb-8">
-        {{ partial:typography/prose as="article" class="contents" }}
-            {{ article }}
-                {{ partial src="components/{type}" }}
-            {{ /article }}
-        {{ /partial:typography/prose }}
+        {{ partial:typography/prose as="article" class="contents" }} {{ article
+        }} {{ partial src="components/{type}" }} {{ /article }} {{
+        /partial:typography/prose }}
     </div>
     <div class="col-start-9 col-span-3 items-center justify-end flex">
-            <a href="/projektid" class="flex items-center gap-2 text-[#30565E] font-semibold">Vaata rohkem tehtud töid{{  heroicon:mini:arrow-right class="w-5 h-5 text-[#D2830D]" }}</a>
+        <a
+            href="/projektid"
+            class="flex items-center gap-2 text-[#30565E] font-semibold"
+            >Vaata rohkem tehtud töid{{ heroicon:mini:arrow-right class="w-5 h-5
+            text-[#D2830D]" }}</a
+        >
     </div>
 </section>
 
 <section class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
     <div class="flex flex-col md:grid grid-cols-12 col-span-12 gap-8 my-12">
-    {{ block:lingid }}
+        {{ block:lingid }}
         <div
-        style="background: url(' {{ glide:image format="webp" quality="{ quality ?? '5' }" }} ') no-repeat center; background-size: cover;" class="
-        flex flex-col justify-between items-start text-white no-underline md:col-span-6 lg:col-span-4"
-            aria-labelledby="{{ title | slugify }}"
-          {{ button }}
-                <p {{ partial:statamic-peak-tools::snippets/button_attributes }} aria-hidden="true" tabindex="-1">
-                    {{ partial:typography/h3 class="mb-2" color="group-hover:underline" :content="title" }}
-                </p>
-            {{ /button }}
+            class="relative flex flex-col justify-between items-start text-white no-underline lg:col-span-4"
         >
-        <div class="flex justify-end w-full pt-4 pr-4">
-            <span>{{  heroicon:mini:arrow-up-right class="w-5 h-5" }}</span>
+            <img class="h-64 w-full object-cover" src="{{ glide:image quality="{
+            quality ?? '600' }"}}" alt="{{ alt }}" cover="false" lazy="true"> {{
+            buttons }}
+            <div class="absolute bottom-0 w-full bg-[#D2830D] opacity-75">
+                <h2
+                    id="{{ title | slugify }}"
+                    class="uppercase font-bold lg:text-[23px] bg-[#D2830D] px-8"
+                >
+                    {{ partial:components/button }}
+                </h2>
+            </div>
+            {{ /buttons }}
         </div>
-        <span id="{{ title | slugify }}" class="w-full flex items-end aspect-video">
-            <p class="uppercase font-normal lg:text-[23px] pl-8 pb-6">{{ title }}</p>
-        </span>
-            {{ partial:components/button as="span" faux="true" }}
-        </a>
-    {{ /block:lingid }}
+        {{ /block:lingid }}
     </div>
 </section>
 {{ /partial:page_builder/block }}

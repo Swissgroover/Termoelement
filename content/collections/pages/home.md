@@ -3,7 +3,11 @@ id: home
 blueprint: page
 title: Home
 updated_by: 47c8f4cc-fd33-4db3-9006-fa792d5d5dd5
+<<<<<<< Updated upstream
 updated_at: 1720161393
+=======
+updated_at: 1720162800
+>>>>>>> Stashed changes
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -316,6 +320,23 @@ page_builder:
           -
             type: text
             text: 'Vaata meie töid ja veendu ise! Galeriis nähtavad tööd annavad ülevaate meie kogemustest ja oskustest.'
+<<<<<<< Updated upstream
+=======
+    lingid:
+      -
+        id: lxwxwgxw
+        image: labipesu.png
+        size: md
+        title: Läbipesu
+        buttons:
+          -
+            id: lxwxx0ly
+            label: test
+            link_type: entry
+            target_blank: false
+            entry: ae48234a-123c-45fe-9567-6ac9e9d5380f
+            button_type: button
+>>>>>>> Stashed changes
     type: projekti_lingid
     enabled: true
   -

@@ -32,17 +32,18 @@
         </div>
         {{ else }}
         <div
-            class="flex flex-col border-2 border-[#30565E] bg-[#E0E9EA] p-8 h-full hover:bg-[#E0E9EA]/50 justify-between"
+            class="flex flex-col border-2 border-[#30565E] bg-[url('/public/images/background/hero.png')] bg-cover p-8 h-full justify-between"
         >
             <a href="{{ url }}" class="flex flex-col justify-center">
                 <div class="mb-12">
                     {{ partial:typography/prose as="article" class="contents
-                    prose-h2:font-normal" }} {{ article }} {{ partial
+                    prose-h2:font-normal prose-p:text-[#FAF3E7]
+                    prose-h2:text-[#FAF3E7]" }} {{ article }} {{ partial
                     src="components/{type}" }} {{ /article }} {{
                     /partial:typography/prose }}
                 </div>
             </a>
-            <p class="flex text-[#30565E] justify-end">
+            <p class="flex text-white ustify-end">
                 Loe lähemalt{{ heroicon:mini:arrow-right class="w-5 h-5
                 text-[#D2830D]" }}
             </p>

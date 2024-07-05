@@ -2,28 +2,24 @@
 
 <!-- /projects/index.antlers.html -->
 <main class="outer-grid" id="content">
-    {{ page_builder scope="block" }} {{ partial src="page_builder/{type}" }} {{/page_builder }}
+    {{ page_builder scope="block" }} {{ partial src="page_builder/{type}" }}
+    {{/page_builder }}
 </main>
-    {{ section:index_content }}
-<div
-    class="span-content grid md:grid-cols-12 gap-fluid-grid-gap"
->
-    {{ collection:projektid sort="title" as="items" }} {{ unless no_results }} {{
-    items }}
+{{ section:index_content }}
+<div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
+    {{ collection:projektid sort="title" as="items" }} {{ unless no_results }}
+    {{ items }}
     <a
-        style="background: url(' {{ glide:image format="webp"}} ') no-repeat center; background-size: cover;"
-        class="flex flex-col justify-between items-start text-white no-underline lg:col-span-4"
         href="{{ url }}"
+        class="relative flex flex-col justify-between items-start text-white no-underline lg:col-span-4"
     >
-        <div class="flex justify-end w-full pt-4 pr-4">
-            <span>{{ heroicon:mini:arrow-up-right class="w-5 h-5" }}</span>
-        </div>
-        <span
-            id="{{ title | slugify }}"
-            class="w-full flex items-end aspect-video"
+        <img class="h-64 w-full object-cover" src="{{ glide:image quality="{
+        quality ?? '600' }"}}" alt="{{ alt }}" cover="false" lazy="true">
+        <div
+            class="absolute bottom-10 left-10 flex items-center justify-center"
         >
-            <p class="uppercase font-bold text-[23px] pl-8 pb-6">{{ title }}</p>
-        </span>
+            <h2 class="text-[#26454B] text-3xl font-bold">{{ title }}</h2>
+        </div>
     </a>
     {{ /items }} {{ else }}
     <div class="md:col-span-6">{{ trans:strings.no_results }}</div>

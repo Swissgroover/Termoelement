@@ -95,8 +95,6 @@ fields:
                           display: Title
                       -
                         import: buttons
-                -
-                  import: buttons
         text:
           display: Text
           instructions: 'Text based blocks.'
