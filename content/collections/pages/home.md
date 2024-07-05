@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 47c8f4cc-fd33-4db3-9006-fa792d5d5dd5
-updated_at: 1720077303
+updated_at: 1720161393
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -316,31 +316,8 @@ page_builder:
           -
             type: text
             text: 'Vaata meie töid ja veendu ise! Galeriis nähtavad tööd annavad ülevaate meie kogemustest ja oskustest.'
-    lingid:
-      -
-        id: lxwxwgxw
-        image: labipesu.png
-        size: md
-        title: Test
-        buttons:
-          -
-            id: lxwxx0ly
-            label: test
-            link_type: entry
-            target_blank: false
-            entry: ae48234a-123c-45fe-9567-6ac9e9d5380f
-            button_type: button
     type: projekti_lingid
     enabled: true
-    buttons:
-      -
-        id: lxwzgzqs
-        label: 'Vaata Rohkem'
-        link_type: entry
-        target_blank: false
-        entry: 21450f11-5205-4803-9bf1-6b2e2aa4c764
-        button_type: inline
-        attr_title: 'Vaata Rohkem'
   -
     id: lxvl8cj0
     buttons:
