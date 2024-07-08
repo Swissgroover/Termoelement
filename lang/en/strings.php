@@ -2,21 +2,21 @@
 
 return [
     // Contact form
-    'form_error' => 'There are problems with your form input:',
+    'form_error' => 'Kohustuslikud väljad on täitmata:',
     'form_honeypot' => 'Fax',
-    'form_mail_body_owner' => 'A contact form has been sent.',
-    'form_mail_body_sender' => 'Thanks for your message. We will contact you as soon as possible.',
-    'form_mail_closing' => 'Kind regards',
+    'form_mail_body_owner' => 'Kiri on saadetud.',
+    'form_mail_body_sender' => 'Täname Teid kirja eest. Vastame esimesel võimalusel.',
+    'form_mail_closing' => 'Lugupidamisega',
     'form_mail_from' => config('app.name'),
-    'form_mail_greeting' => 'Dear',
+    'form_mail_greeting' => 'Lugupeetud',
     'form_mail_logo' => config('app.url').'/visuals/logo-oranz.png',
-    'form_mail_submitted' => 'Submitted',
-    'form_mail_title' => 'Contact form',
+    'form_mail_submitted' => 'Edastatud',
+    'form_mail_title' => 'Kontakt',
     'form_mail_url' => config('app.url'),
     'form_send' => 'Saada sõnum',
-    'form_subject_received' => 'Contact form received',
-    'form_subject_sent' => 'Contact form sent',
-    'form_success' => 'Thank you, we received your message and will contact you as soon as possible.',
+    'form_subject_received' => 'Kiri kätte saadud',
+    'form_subject_sent' => 'Kiri saadetud',
+    'form_success' => 'Täname Teid kirja eest. Vastame esimesel võimalusel.',
 
     // Consent banner
     'consent_accept_all' => 'Accept all',
